@@ -33,7 +33,7 @@ async function handler(req, res) {
     isAdmin: false,
   });
   const user = await newUser.save();
-  await db.disconnect();
+
   return res.status(201).send({
     message: "User created successfully",
     _id: user._id,

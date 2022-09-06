@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import Layout from "../components/Layout";
 
-const unauthorizedScreen = () => {
+const Unauthorized = () => {
   const router = useRouter();
   const { message } = router.query;
   return (
@@ -15,4 +15,4 @@ const unauthorizedScreen = () => {
   );
 };
 
-export default unauthorizedScreen;
+export default Unauthorized;

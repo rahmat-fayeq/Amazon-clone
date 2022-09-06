@@ -7,7 +7,7 @@ import CheckoutWizard from "../components/CheckoutWizard";
 import Layout from "../components/Layout";
 import { savePaymentMethod } from "../utils/CartSlice";
 
-const paymentScreen = () => {
+const Payment = () => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
@@ -63,6 +63,6 @@ const paymentScreen = () => {
   );
 };
 
-export default paymentScreen;
+export default Payment;
 
-paymentScreen.auth = true;
+Payment.auth = true;

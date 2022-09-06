@@ -43,7 +43,7 @@ function reducer(state, action) {
       state;
   }
 }
-function OrderScreen() {
+function Order() {
   const { data: session } = useSession();
   // order/:id
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
@@ -305,5 +305,5 @@ function OrderScreen() {
   );
 }
 
-OrderScreen.auth = true;
-export default OrderScreen;
+Order.auth = true;
+export default Order;

@@ -35,8 +35,6 @@ const handler = async (req, res) => {
   }
   await userExists.save();
 
-  await db.disconnect();
-
   return res.status(200).send({ message: "Profile updated successfully" });
 };
 export default handler;

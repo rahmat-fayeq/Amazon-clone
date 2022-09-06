@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/Layout";
-import dynamic from "next/dynamic";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
@@ -12,7 +11,7 @@ import {
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-function CartScreen() {
+const Cart = () => {
   const router = useRouter();
 
   const dispatch = useDispatch();
@@ -20,7 +19,7 @@ function CartScreen() {
 
   useEffect(() => {
     dispatch(getTotals());
-  }, [cart]);
+  }, [cart, dispatch]);
 
   const handleRemoveFromCart = (product) => {
     dispatch(removeFromCart(product));
@@ -118,6 +117,6 @@ function CartScreen() {
       )}
     </Layout>
   );
-}
+};
 
-export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });
+export default Cart;

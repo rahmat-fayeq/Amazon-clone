@@ -9,12 +9,12 @@ import db from "../../utils/db";
 import Product from "../../models/Product";
 
 const ProductScreen = (props) => {
+  const dispatch = useDispatch();
   const { product } = props;
   if (!product) {
     return <Page404 />;
   }
 
-  const dispatch = useDispatch();
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
   };

@@ -15,7 +15,7 @@ function reducer(state, action) {
   }
 }
 
-const OrderHistoryScreen = () => {
+const Order = () => {
   const [{ loading, orders, error }, dispatch] = useReducer(reducer, {
     loading: true,
     orders: [],
@@ -90,6 +90,6 @@ const OrderHistoryScreen = () => {
   );
 };
 
-OrderHistoryScreen.auth = true;
+Order.auth = true;
 
-export default OrderHistoryScreen;
+export default Order;

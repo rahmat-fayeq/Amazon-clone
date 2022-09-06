@@ -10,7 +10,7 @@ import { getError } from "../utils/error";
 import axios from "axios";
 import { cartReset } from "../utils/CartSlice";
 
-const placeorderScreen = () => {
+const Placeorder = () => {
   const { cartItems, cartTotalAmmount, shippingAddress, paymentMethod } =
     useSelector((state) => state.cart);
 
@@ -168,5 +168,5 @@ const placeorderScreen = () => {
   );
 };
 
-export default placeorderScreen;
-placeorderScreen.auth = true;
+export default Placeorder;
+Placeorder.auth = true;

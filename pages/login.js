@@ -6,9 +6,8 @@ import { useForm } from "react-hook-form";
 import { getError } from "../utils/error";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
-import axios from "axios";
 
-const LoginScreen = () => {
+const Login = () => {
   const { data: session } = useSession();
   const router = useRouter();
   const { redirect } = router.query;
@@ -25,7 +24,7 @@ const LoginScreen = () => {
     formState: { errors },
   } = useForm();
 
-  const submitHandler = async ({ name, email, password }) => {
+  const submitHandler = async ({ email, password }) => {
     try {
       const result = await signIn("credentials", {
         redirect: false,
@@ -96,4 +95,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default Login;

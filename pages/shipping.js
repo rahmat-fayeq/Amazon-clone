@@ -6,7 +6,7 @@ import CheckoutWizard from "../components/CheckoutWizard";
 import Layout from "../components/Layout";
 import { saveShippingAddress } from "../utils/CartSlice";
 
-const shippingScreen = () => {
+const Shipping = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.cart);
@@ -16,7 +16,6 @@ const shippingScreen = () => {
     register,
     formState: { errors },
     setValue,
-    getValues,
   } = useForm();
 
   useEffect(() => {
@@ -25,7 +24,7 @@ const shippingScreen = () => {
     setValue("city", state.shippingAddress.city);
     setValue("postalCode", state.shippingAddress.postalCode);
     setValue("country", state.shippingAddress.country);
-  }, [state.shippingAddress]);
+  }, [state.shippingAddress, setValue]);
 
   const submitHandler = ({ fullName, address, city, postalCode, country }) => {
     dispatch(
@@ -120,6 +119,6 @@ const shippingScreen = () => {
   );
 };
 
-export default shippingScreen;
+export default Shipping;
 
-shippingScreen.auth = true;
+Shipping.auth = true;

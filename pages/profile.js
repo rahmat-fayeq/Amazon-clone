@@ -6,7 +6,7 @@ import { getError } from "../utils/error";
 import axios from "axios";
 import Layout from "../components/Layout";
 
-export default function ProfileScreen() {
+export default function Profile() {
   const { data: session } = useSession();
 
   const {
@@ -133,4 +133,4 @@ export default function ProfileScreen() {
   );
 }
 
-ProfileScreen.auth = true;
+Profile.auth = true;

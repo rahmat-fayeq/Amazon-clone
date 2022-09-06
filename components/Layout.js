@@ -17,7 +17,7 @@ const Layout = ({ title, children }) => {
 
   useEffect(() => {
     dispatch(getTotals());
-  }, [cart]);
+  }, [cart, dispatch]);
 
   const handleLogOut = () => {
     dispatch(cartReset());

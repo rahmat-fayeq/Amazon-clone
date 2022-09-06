@@ -10,7 +10,7 @@ const handler = async (req, res) => {
   const { user } = session;
   await db.connect();
   const orders = await Order.find({ user: user._id });
-  await db.disconnect();
+
   res.status(201).send(orders);
 };
 
